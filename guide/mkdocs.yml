@@ -3,8 +3,6 @@ site_name: Discography
 theme:
   name: mkdocs
 
-navigation_depth: 3
-
 copyright: 'Copyright &copy; 2026 Primo Studios / George Senger. All rights reserved.'
 
 extra_css:
