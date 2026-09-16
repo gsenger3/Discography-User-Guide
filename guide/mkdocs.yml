@@ -1,0 +1,20 @@
+site_name: Discography
+
+theme:
+  name: mkdocs
+
+navigation_depth: 3
+
+copyright: 'Copyright &copy; 2026 Primo Studios / George Senger. All rights reserved.'
+
+extra_css:
+  - stylesheets/dsc.css
+
+nav:
+  - Home: index.md
+  - User Guide:
+      - User Interface: ui.md
+      - Managing Your Collection: collection.md
+      - Searching Your Collection: search.md
+      - MusicBrainz Integration: musicbrainz.md
+      - Advanced Features: advanced.md
