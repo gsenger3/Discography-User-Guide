@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>User Interface - Discography</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../stylesheets/dsc.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Discography</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">User Guide</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">User Interface</a>
+</li>
+                                    
+<li>
+    <a href="../collection/" class="dropdown-item">Managing Your Collection</a>
+</li>
+                                    
+<li>
+    <a href="../search/" class="dropdown-item">Searching Your Collection</a>
+</li>
+                                    
+<li>
+    <a href="../musicbrainz/" class="dropdown-item">MusicBrainz Integration</a>
+</li>
+                                    
+<li>
+    <a href="../advanced/" class="dropdown-item">Advanced Features</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href=".." class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../collection/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#user-interface" class="nav-link">User Interface</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#getting-around" class="nav-link">Getting Around</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#home-screen" class="nav-link">Home Screen</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#collection-list" class="nav-link">Collection List</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#album-detail" class="nav-link">Album Detail</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="user-interface">User Interface</h1>
+<p>This page covers the main screens and layout of Discography: the <strong>Home Screen</strong>, the <strong>Collection List</strong>, and the <strong>Album Detail View</strong>.</p>
+<hr />
+<h2 id="getting-around">Getting Around</h2>
+<p>Discography uses a two-panel split layout. On Mac and iPad the sidebar shows your collection list on the left and the detail panel on the right. On iPhone the app starts on the detail panel (the Home screen); swipe or tap the list icon to get to the sidebar.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Discography logo (toolbar)</td>
+<td>Returns to the Home screen</td>
+</tr>
+<tr>
+<td>MusicBrainz icon (toolbar)</td>
+<td>Toggles MusicBrainz search mode on/off</td>
+</tr>
+<tr>
+<td>+ button (toolbar)</td>
+<td>Creates a new blank album entry</td>
+</tr>
+<tr>
+<td>Barcode icon (toolbar, iOS)</td>
+<td>Opens the barcode scanner</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="home-screen">Home Screen</h2>
+<p>The Home screen is the default detail view when nothing is selected in the list.</p>
+<p><strong>Statistics card</strong> — shows your total album count and a breakdown by the two most common formats in your collection, with any remaining formats grouped under "All Other Formats."</p>
+<p><strong>Recently Added</strong> — a horizontal coverflow scroll of the albums you added most recently. Tap any card to open that album's detail view. The number of albums shown is configurable in Settings.</p>
+<p><strong>Album Spotlight</strong> — one album picked daily from your collection. The pick rotates each calendar day.</p>
+<p><strong>Quick Actions (iOS only)</strong> — shortcut buttons for <code>Add New Album</code> and <code>Scan Barcode</code>.</p>
+<p><strong>Search bar (iPhone only)</strong> — a floating search bar at the bottom of the Home screen lets you type a search and jump directly to the filtered collection list.</p>
+<p><img alt="dsc Home" src="../img/dschomes.png" /></p>
+<hr />
+<h2 id="collection-list">Collection List</h2>
+<p>The sidebar lists all albums in your collection with cover art thumbnail, title, artist, year, country flag, and format icon.</p>
+<blockquote>
+<p>Note: If the album is marked as a re-issue, the Re-Issue Year will display in the collection list, not the original release year.</p>
+</blockquote>
+<p><img alt="dsc Home" src="../img/dsc-collection.png" /></p>
+<h3 id="filtering-and-sorting">Filtering and Sorting</h3>
+<p>A compact control strip sits above the list:</p>
+<ul>
+<li><strong>Format picker</strong> — filter to a single media format (Vinyl, CD, Cassette, DVD, Blu-Ray, 8-Track, Other) or show all.</li>
+<li><strong>Sort picker</strong> — sort by Artist, Album title, or Year.</li>
+<li><strong>Sort direction button</strong> — toggles ascending/descending order.</li>
+</ul>
+<p>A results count banner below the strip shows how many albums match the current filter and search. When an advanced search is active, a blue "Advanced" badge appears next to the count.</p>
+<h3 id="list-actions">List Actions</h3>
+<ul>
+<li><strong>Tap / click</strong> an album to open its detail view.</li>
+<li><strong>Swipe left (iOS)</strong> on a row to reveal a Delete button.</li>
+<li><strong>Right-click / long-press</strong> a row for a context menu with: Search MusicBrainz for this artist, Duplicate Album, and Delete Album.</li>
+<li><strong>Select multiple (macOS)</strong> by clicking rows while holding Command or Shift, then use the Delete toolbar button to remove them all at once.</li>
+<li><strong>Pull to refresh (iOS MusicBrainz mode)</strong> — reruns the current MusicBrainz search.</li>
+</ul>
+<p>For details on deleting and duplicating albums, see <a href="../collection/">Managing Your Collection</a>.</p>
+<hr />
+<h2 id="album-detail">Album Detail</h2>
+<p>Tapping an album opens its detail view. The layout has two modes: <strong>read-only</strong> and <strong>edit</strong>.</p>
+<h3 id="read-only-view">Read-Only View</h3>
+<p><img alt="dsc Home" src="../img/dsc-album.png" /></p>
+<ul>
+<li>A hero banner at the top displays blurred cover art behind a gradient, with a full-resolution thumbnail on the right side.</li>
+<li>Title and artist are overlaid on the banner in large text.</li>
+<li><strong>Format / Release Type</strong> displayed below the banner.</li>
+<li><strong>Rating</strong> shown as filled record icons (1–5 scale) if set.</li>
+<li>Release metadata: year, country, reissue year, label, UPC, catalog number, media condition, sleeve condition, matrix/runout notes, and free-text notes.</li>
+<li><strong>Apple Music</strong> pill — taps through to an Apple Music search for the album (requires internet).</li>
+<li><strong>MusicBrainz</strong> pill — opens the release page on musicbrainz.org in your browser (shown only when a MusicBrainz ID has been linked).</li>
+<li><strong>Tracklist</strong> — all tracks grouped by disc number, with position, title, and duration.</li>
+<li><strong>Credits</strong> — sorted by role then name.</li>
+<li><strong>Tags</strong> — displayed as colored pills.</li>
+</ul>
+<p>On macOS you can drag the cover art thumbnail out of the window to share it with other apps.
+On iOS, long-press the cover art thumbnail to Save to Photos or share it.</p>
+<h3 id="toolbar-buttons-read-only-mode">Toolbar Buttons (read-only mode)</h3>
+<table>
+<thead>
+<tr>
+<th>Button</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MusicBrainz icon</td>
+<td>Fetches missing metadata (tracks, credits, cover art) from MusicBrainz for albums that already have a MusicBrainz ID</td>
+</tr>
+<tr>
+<td>Pencil / Edit</td>
+<td>Switches to edit mode</td>
+</tr>
+</tbody>
+</table>
+<h3 id="edit-mode">Edit Mode</h3>
+<p><img alt="dsc Home" src="../img/dsc-album-edit.png" /></p>
+<p>Tap <strong>Edit</strong> (pencil icon) to enter edit mode. All fields become editable. Tap <strong>Save</strong> (checkmark) to commit, or <strong>Cancel</strong> (×) to discard.</p>
+<p><strong>Title</strong> and <strong>Artist</strong> are required — Save is disabled until both are filled.</p>
+<p>As you type in the Title, Artist, and Label fields, autocomplete suggestions drawn from your existing collection appear in a dropdown. Navigate with the arrow keys and press Return to accept a suggestion, or Escape to dismiss it.</p>
+<h4 id="fields-available-in-edit-mode">Fields available in edit mode</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Album Title</strong></td>
+<td><em>Required</em></td>
+</tr>
+<tr>
+<td><strong>Artist</strong></td>
+<td><em>Required</em></td>
+</tr>
+<tr>
+<td>Year</td>
+<td>Original release year</td>
+</tr>
+<tr>
+<td>Country</td>
+<td>Two-letter country code or full name</td>
+</tr>
+<tr>
+<td>Format</td>
+<td>Vinyl, CD, Cassette, DVD, Blu-Ray, 8-Track, Other</td>
+</tr>
+<tr>
+<td>Release Type</td>
+<td>Album, EP, Single, Compilation</td>
+</tr>
+<tr>
+<td>Re-Issue Year</td>
+<td>Year of the specific pressing you own</td>
+</tr>
+<tr>
+<td>Label</td>
+<td>Record label <em>(with autocomplete)</em></td>
+</tr>
+<tr>
+<td>UPC / Barcode</td>
+<td>Numeric barcode</td>
+</tr>
+<tr>
+<td>Catalog Number</td>
+<td>Label catalog number</td>
+</tr>
+<tr>
+<td>MusicBrainz ID</td>
+<td>UUID for the release on musicbrainz.org</td>
+</tr>
+<tr>
+<td>Rating</td>
+<td>1–5 record icons</td>
+</tr>
+<tr>
+<td>Media Condition</td>
+<td>M, NM, VG+, VG, G+, G, F, P</td>
+</tr>
+<tr>
+<td>Sleeve Condition</td>
+<td>Same scale as Media Condition</td>
+</tr>
+<tr>
+<td>Matrix / Runout</td>
+<td>Pressed-in matrix text (vinyl)</td>
+</tr>
+<tr>
+<td>Notes</td>
+<td>Free-text personal notes</td>
+</tr>
+<tr>
+<td>Cover Art URL</td>
+<td>Direct URL to cover art image</td>
+</tr>
+</tbody>
+</table>
+<h4 id="media-conditions">Media Conditions</h4>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M</td>
+<td>Mint</td>
+</tr>
+<tr>
+<td>NM</td>
+<td>Near Mint</td>
+</tr>
+<tr>
+<td>VG+</td>
+<td>Very Good+</td>
+</tr>
+<tr>
+<td>VG</td>
+<td>Very Good</td>
+</tr>
+<tr>
+<td>G+</td>
+<td>Good+</td>
+</tr>
+<tr>
+<td>G</td>
+<td>Good</td>
+</tr>
+<tr>
+<td>F</td>
+<td>Fair</td>
+</tr>
+<tr>
+<td>P</td>
+<td>Poor</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cover art</strong> can also be set by:</p>
+<ul>
+<li>Clicking the camera button on the artwork thumbnail to pick an image from your Photos library (iOS) or file system (macOS).</li>
+<li>Dragging an image file onto the artwork thumbnail (macOS).</li>
+<li>Right-clicking / long-pressing the thumbnail and choosing Remove Artwork to clear it.</li>
+</ul>
+<p><strong>Tracks</strong> — tap <strong>Add Track</strong> to create a new track row. Each track has a position, disc number, title, and duration (in <code>m:ss</code> format). Tap the × on a row to remove it.</p>
+<p><strong>Credits</strong> — tap <strong>Add Credit</strong> to add a role/name pair (e.g., "Producer — Quincy Jones"). Tap × to remove.</p>
+<p><strong>Tags</strong> — type a tag name and press Return to add it, or tap the × on a pill to remove it. See <a href="../advanced/#managing-tags">Managing Tags</a> for renaming and deleting tags across your whole collection.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2026 Primo Studios / George Senger. All rights reserved.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
