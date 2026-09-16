@@ -1,0 +1,52 @@
+/*  
+    dsc.css
+
+    Created by George Senger on 8/19/26.
+    Copyright © 2026 Primo Studios/George Senger. All rights reserved.
+    
+    Custom Discography css overrides for the MkDocs html theme 
+
+*/
+
+/* Override the nav header bg to match Discography color theme */
+div.navbar.bg-primary,
+div.navbar.bg-primary > div {
+    background: linear-gradient(to right, #723CD9, #AD16C8) !important;
+}
+
+/*
+div.navbar.bg-primary,
+div.navbar.bg-primary > div {
+    background: #9370DB !important;
+    background-color: #9370DB !important;
+}
+*/
+
+/* Hide the navigation sidebar column */
+div.col-md-3 {
+    display: none !important;
+}
+
+/* Expand the main content area to 100% width */
+div.col-md-9 {
+    width: 70% !important;
+    flex: 0 0 70% !important;
+    max-width: 70% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    float: none !important;
+}
+
+/* display dsc icon in the header */
+.navbar-brand::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    vertical-align: middle;
+    background-image: url('/img/Discography_White.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
