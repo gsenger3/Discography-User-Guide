@@ -104,6 +104,8 @@ Tap **Edit** (pencil icon) to enter edit mode. All fields become editable. Tap *
 
 As you type in the Title, Artist, and Label fields, autocomplete suggestions drawn from your existing collection appear in a dropdown. Navigate with the arrow keys and press Return to accept a suggestion, or Escape to dismiss it.
 
+---
+
 #### Fields available in edit mode
 
 | Field | Notes |
@@ -126,6 +128,8 @@ As you type in the Title, Artist, and Label fields, autocomplete suggestions dra
 | Notes | Free-text personal notes |
 | Cover Art URL | Direct URL to cover art image |
 
+---
+
 #### Media Conditions
 
 | Key | Value     |
@@ -138,6 +142,8 @@ As you type in the Title, Artist, and Label fields, autocomplete suggestions dra
 | G   | Good      |
 | F   | Fair      |
 | P   | Poor      |
+
+---
 
 **Cover art** can also be set by:
 
