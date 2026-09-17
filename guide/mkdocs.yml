@@ -3,7 +3,7 @@ site_name: Discography
 theme:
   name: mkdocs
 
-copyright: 'Copyright &copy; 2026 Primo Studios / George Senger. All rights reserved.'
+copyright: 'Copyright &copy; 2026 Primo Studios / George Senger.<br/>All rights reserved.'
 
 extra_css:
   - stylesheets/dsc.css
