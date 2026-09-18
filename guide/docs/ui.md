@@ -13,7 +13,7 @@ Discography uses a two-panel split layout. On Mac and iPad the sidebar shows you
 | Discography logo (toolbar) | Returns to the Home screen |
 | MusicBrainz icon (toolbar) | Toggles MusicBrainz search mode on/off |
 | + button (toolbar) | Creates a new blank album entry |
-| Barcode icon (toolbar, iOS) | Opens the barcode scanner |
+| Barcode icon (toolbar) `iOS` | Opens the barcode scanner |
 
 ---
 
@@ -27,9 +27,9 @@ The Home screen is the default detail view when nothing is selected in the list.
 
 **Album Spotlight** — one album picked daily from your collection. The pick rotates each calendar day.
 
-**Quick Actions (iOS only)** — shortcut buttons for `Add New Album` and `Scan Barcode`.
+**Quick Actions** `iOS` — shortcut buttons for `Add New Album` and `Scan Barcode`.
 
-**Search bar (iPhone only)** — a floating search bar at the bottom of the Home screen lets you type a search and jump directly to the filtered collection list.
+**Search bar** `iPhone` — a floating search bar at the bottom of the Home screen lets you type a search and jump directly to the filtered collection list.
 
 ![dsc Home](img/dschomes.png)
 
@@ -56,10 +56,10 @@ A results count banner below the strip shows how many albums match the current f
 ### List Actions
 
 - **Tap / click** an album to open its detail view.
-- **Swipe left (iOS)** on a row to reveal a Delete button.
+- **Swipe left** `iOS` on a row to reveal a Delete button.
 - **Right-click / long-press** a row for a context menu with: Search MusicBrainz for this artist, Duplicate Album, and Delete Album.
-- **Select multiple (macOS)** by clicking rows while holding Command or Shift, then use the Delete toolbar button to remove them all at once.
-- **Pull to refresh (iOS MusicBrainz mode)** — reruns the current MusicBrainz search.
+- **Select multiple** `macOS` by clicking rows while holding Command or Shift, then use the Delete toolbar button to remove them all at once.
+- **Pull to refresh (MusicBrainz mode)** `iOS` — reruns the current MusicBrainz search.
 
 For details on deleting and duplicating albums, see [Managing Your Collection](collection.md).
 
@@ -84,8 +84,8 @@ Tapping an album opens its detail view. The layout has two modes: **read-only** 
 - **Credits** — sorted by role then name.
 - **Tags** — displayed as colored pills.
 
-On macOS you can drag the cover art thumbnail out of the window to share it with other apps.
-On iOS, long-press the cover art thumbnail to Save to Photos or share it.
+On `macOS` you can drag the cover art thumbnail out of the window to share it with other apps.
+On `iOS`, long-press the cover art thumbnail to Save to Photos or share it.
 
 ### Toolbar Buttons (read-only mode)
 
@@ -147,8 +147,8 @@ As you type in the Title, Artist, and Label fields, autocomplete suggestions dra
 
 **Cover art** can also be set by:
 
-- Clicking the camera button on the artwork thumbnail to pick an image from your Photos library (iOS) or file system (macOS).
-- Dragging an image file onto the artwork thumbnail (macOS).
+- Clicking the camera button on the artwork thumbnail to pick an image from your Photos library `iOS` or file system `macOS`.
+- Dragging an image file onto the artwork thumbnail `macOS`.
 - Right-clicking / long-pressing the thumbnail and choosing Remove Artwork to clear it.
 
 **Tracks** — tap **Add Track** to create a new track row. Each track has a position, disc number, title, and duration (in `m:ss` format). Tap the × on a row to remove it.

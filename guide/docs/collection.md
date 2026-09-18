@@ -24,6 +24,14 @@ Right-click (or long-press) any album row in the list and choose **Duplicate Alb
 
 ## Deleting Albums
 
-- **Swipe left (iOS)** on a row in the collection list to reveal a Delete button.
-- **Right-click / long-press** a row and choose **Delete Album** from the context menu.
-- **Select multiple (macOS)** by clicking rows while holding Command or Shift, then use the Delete toolbar button to remove them all at once.
+- `iOS` **Swipe left** — on a row in the collection list to reveal a Delete button.
+- **Right-click / long-press** — a row and choose **Delete Album** from the context menu.
+- `macOS` **Select** — an album, then use the Delete toolbar button to remove it.
+- `macOS` **Select multiple** — by clicking rows while holding Command or Shift, then use the Delete toolbar button to remove them all at once.
+
+---
+
+## Importing Albums
+
+- `macOS` **Import From Discography** - see [Advanced Features: Discography Importing](advanced.md#importing)
+- `macOS` **Import From Discogs** - see [Advanced Features: Discogs Importing](advanced.md#importing)

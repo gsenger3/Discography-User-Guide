@@ -1,6 +1,6 @@
 # Searching Your Collection
 
-This page covers simple and advanced search over your local collection.
+This page covers simple and advanced search through your local collection.
 
 ---
 
@@ -21,7 +21,7 @@ The search is case-insensitive and matches partial strings. Clearing the search 
 
 ## Advanced Local Search
 
-When your search text contains `=`, `~`, `<`, or `>` characters, Discography automatically switches to advanced search mode. An **Advanced** badge appears in the results banner.
+When your search text contains `=`, `~`, `<`, or `>` characters, Discography automatically switches to advanced search mode. An <span style="background-color: #ea9de6; color: #1e293b; padding: 4px 12px; border-radius: 9999px; font-size: 0.85em; font-weight: 500;">Advanced</span> badge appears in the results banner.
 
 Advanced search uses a structured `field=value` syntax to target specific fields and combine conditions with boolean logic.
 
@@ -55,7 +55,7 @@ Advanced search uses a structured `field=value` syntax to target specific fields
 | Operator | Meaning |
 |---|---|
 | `&` | AND — both conditions must match |
-| `\|` | OR — either condition must match |
+| \| | OR — either condition may match |
 | `!` | NOT — inverts the following condition |
 | `( )` | Grouping — controls evaluation order |
 

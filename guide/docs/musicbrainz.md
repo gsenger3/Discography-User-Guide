@@ -15,6 +15,7 @@ Tap the **MusicBrainz icon** in the toolbar. The icon gets a highlighted border 
 Type your query in the search field and press **Return / Enter**. Results load from the MusicBrainz API and appear in the list. Each result shows cover art (if available), title, artist, year, country flag, and format badge.
 
 Simple MusicBrainz search accepts any combination of:
+
 - Artist name
 - Album / release title
 - Barcode (UPC/EAN)
@@ -24,11 +25,11 @@ Results are paginated. Scroll to the bottom of the list to automatically load th
 
 The format filter and sort controls at the top of the sidebar apply to MusicBrainz results the same way they do to your local collection.
 
-> Note: Sometimes MusicBrainz fails to or returns incomplete results. The recommended course of action is to refresh the search. Select the `Refresh` button on macOS and pull down to refresh on iOS. 
+> Note: Sometimes MusicBrainz fails to or returns incomplete results. The recommended course of action is to refresh the search. Select the `Refresh` button on `macOS` or pull down to refresh on `iOS`. 
 
 ### Exiting MusicBrainz Mode
 
-Tap the MusicBrainz icon again, tap the Discography logo to go Home, or (on iOS) cancel the search to exit MusicBrainz mode.
+Tap the MusicBrainz icon again, tap the Discography logo to go Home, or (on `iOS`) cancel the search to exit MusicBrainz mode.
 
 ---
 
@@ -63,7 +64,7 @@ a=Bowie r=Heroes
 
 A hint card is shown in the MusicBrainz detail panel whenever the search field is empty — it lists all supported keys and example queries for quick reference.
 
-When an advanced MusicBrainz query is active, an orange **Advanced** badge appears in the results banner.
+When an advanced MusicBrainz query is active, an <span style="background-color: #efc977; color: #1e293b; padding: 4px 12px; border-radius: 9999px; font-size: 0.85em; font-weight: 500;">Advanced</span> badge appears in the results banner.
 
 ---
 
