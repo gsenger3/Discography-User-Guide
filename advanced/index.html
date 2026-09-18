@@ -149,13 +149,13 @@
 </table>
 <hr />
 <h2 id="managing-tags">Managing Tags</h2>
-<p>Tags are free-form labels you can attach to any album for personal categorization — for example: <code>favourite</code>, <code>wants-remaster</code>, <code>jazz</code>, <code>live</code>.</p>
+<p>Tags are free-form labels you can attach to any album for personal categorization — for example: <code>favorite</code>, <code>remaster</code>, <code>jazz</code>, <code>live</code>.</p>
 <h3 id="adding-tags-in-edit-mode">Adding Tags in Edit Mode</h3>
 <ol>
 <li>Open an album and tap Edit.</li>
 <li>Scroll to the <strong>Tags</strong> section.</li>
 <li>Type a tag name in the text field. A dropdown appears with suggestions drawn from tags already used across your collection.</li>
-<li>Press Return (or select a suggestion with the arrow keys and press Return) to add the tag.</li>
+<li>Press Return (<em>or select a suggestion with the arrow keys and press Return</em>) to add the tag.</li>
 <li>Tap the <strong>×</strong> on any pill to remove that tag.</li>
 </ol>
 <h3 id="managing-tags-settings">Managing Tags (Settings)</h3>
@@ -169,12 +169,31 @@
 <hr />
 <h2 id="export-and-import">Export and Import</h2>
 <h3 id="exporting-macos">Exporting (macOS)</h3>
-<p>Go to <strong>File &gt; Export…</strong> (or the Export menu item) to open the export panel. Discography compiles your entire collection — album metadata, tracks, credits, tags, and embedded cover art — into a <code>.dsc</code> archive file. The archive is a ZIP file containing a JSON database; it can be opened with any standard ZIP utility.</p>
-<p>A progress log updates in real time. Click <strong>Choose Destination</strong> to pick where the file is saved, then click <strong>Export</strong>. You can cancel a long export at any time.</p>
+<p>Discography compiles your entire collection — album metadata, tracks, credits, tags, and embedded cover art — into a <code>.dsc</code> archive file.</p>
+<ol>
+<li>Go to <strong>File &gt; Export…</strong> to open the export panel.</li>
+<li>Click <strong>Choose Destination</strong> to pick where the file is saved,</li>
+<li>then click <strong>Export</strong>.</li>
+</ol>
+<p>The export will run and a progress log updates in real time. You can cancel a long export at any time.</p>
+<blockquote>
+<p>Note: The <code>.dsc</code> archive file is a ZIP file containing a JSON database; it can be opened with any standard ZIP utility.</p>
+</blockquote>
 <h3 id="importing">Importing</h3>
-<p>Go to <strong>File &gt; Import…</strong> to import a previously exported <code>.dsc</code> archive or a Discogs CSV export. The import view shows a progress log and handles duplicates gracefully.</p>
-<p>For details on the <code>.dsc</code> file format, see <code>doc/DSC_EXPORT_FORMAT.md</code>.
-For the Discogs CSV format, see <code>doc/DISCOGS_IMPORT_FORMAT.md</code>.</p></div>
+<p>Discography can import both <code>.dsc</code> archives and Discogs <code>.csv</code> export files.</p>
+<ol>
+<li>Go to <strong>File &gt; Import…</strong> to import a previously exported <code>.dsc</code> archive or a Discogs <code>.csv</code> export.</li>
+<li>Click <strong>Choose</strong> to select the file you want to import.</li>
+</ol>
+<blockquote>
+<p><code>.dsc</code> import will give you the option of appending the file to your collection or replacing it.</p>
+</blockquote>
+<ol>
+<li>Click the <strong>Import</strong> button.</li>
+</ol>
+<p>The import will begin. Discography <code>.dsc</code> imports will show a progress log and handles duplicates gracefully.</p>
+<p>For details on the <code>.dsc</code> file format, see <a href="../DSC_EXPORT_FORMAT/">DSC EXPORT FORMAT</a>.
+For the Discogs <code>.csv</code> format, see <a href="../DISCOGS_IMPORT_FORMAT/">DISCOGS IMPORT FORMAT</a>.</p></div>
             </div>
         </div>
 
