@@ -201,7 +201,7 @@
 <li>Release metadata: year, country, reissue year, label, UPC, catalog number, media condition, sleeve condition, matrix/runout notes, and free-text notes.</li>
 <li><strong>Apple Music</strong> pill — taps through to an Apple Music search for the album (requires internet).</li>
 <li><strong>MusicBrainz</strong> pill — opens the release page on musicbrainz.org in your browser (shown only when a MusicBrainz ID has been linked).</li>
-<li><strong>Tracklist</strong> — all tracks grouped by disc number, with position, title, and duration.</li>
+<li><strong>Tracklist</strong> — tracks displayed hierarchically. For multi-disc releases, a <strong>Disc N</strong> (or <strong>Tape N</strong> for Cassette) header groups each disc's tracks. For Vinyl and Cassette, tracks are further grouped under <strong>Side A</strong>, <strong>Side B</strong>, etc. within each disc. The disc header is hidden when there is only one disc. Each track shows its position number, title, and duration.</li>
 <li><strong>Credits</strong> — sorted by role then name.</li>
 <li><strong>Tags</strong> — displayed as colored pills.</li>
 </ul>
@@ -362,7 +362,40 @@ On <code>iOS</code>, long-press the cover art thumbnail to Save to Photos or sha
 <li>Dragging an image file onto the artwork thumbnail <code>macOS</code>.</li>
 <li>Right-clicking / long-pressing the thumbnail and choosing Remove Artwork to clear it.</li>
 </ul>
-<p><strong>Tracks</strong> — tap <strong>Add Track</strong> to create a new track row. Each track has a position, disc number, title, and duration (in <code>m:ss</code> format). Tap the × on a row to remove it.</p>
+<p><strong>Tracks</strong> — tap <strong>Add Track</strong> to create a new track row. Each track is displayed as a card with the following fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Position</td>
+<td>Auto-calculated — not editable directly. Resets to 1 at the start of each disc or side</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Track name</td>
+</tr>
+<tr>
+<td>Duration</td>
+<td>In <code>m:ss</code> format (e.g. <code>3:45</code>)</td>
+</tr>
+<tr>
+<td>Disc #</td>
+<td>Disc (or tape) number for multi-disc releases</td>
+</tr>
+<tr>
+<td>Side</td>
+<td>Physical side label (e.g. <code>A</code>, <code>B</code>) — only shown for <strong>Vinyl</strong> and <strong>Cassette</strong> formats</td>
+</tr>
+</tbody>
+</table>
+<p>Cards are color-coded by disc number. For Vinyl and Cassette, Side A cards are shown at full intensity and each subsequent side uses a progressively paler tint to make sides visually distinct.</p>
+<p>Drag the handle (≡) on the right of a card to reorder tracks. When a track is dragged into a different disc or side group, its Disc # and Side fields update automatically to match its new neighbors.</p>
+<p>Tap <strong>Add Track</strong> to append a row — the new track inherits the disc number and side of the last existing track so you can keep entering tracks without adjusting those fields each time. Tap the × on a card to remove it.</p>
 <p><strong>Credits</strong> — tap <strong>Add Credit</strong> to add a role/name pair (e.g., "Producer — Quincy Jones"). Tap × to remove.</p>
 <p><strong>Tags</strong> — type a tag name and press Return to add it, or tap the × on a pill to remove it. See <a href="../advanced/#managing-tags">Managing Tags</a> for renaming and deleting tags across your whole collection.</p></div>
             </div>

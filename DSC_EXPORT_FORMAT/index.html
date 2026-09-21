@@ -99,6 +99,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-bs-level="2"><a href="#schema-version-history" class="nav-link">Schema Version History</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-bs-level="2"><a href="#json-schema" class="nav-link">JSON Schema</a>
               <ul class="nav flex-column">
               </ul>
@@ -123,10 +127,10 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="discography-export-format-dsc">Discography Export Format (.dsc)</h1>
-<p>This document describes the <code>.dsc</code> archive format produced by the <strong>Export Discography Collection</strong> feature.</p>
+<p>This document describes the <code>.dsc</code> archive format produced by the <strong>Export Discography to JSON</strong> feature.</p>
 <hr />
 <h2 id="archive-overview">Archive Overview</h2>
-<p>A <code>.dsc</code> file is a standard ZIP archive with a renamed extension. It can be opened with any ZIP utility (macOS Archive Utility, 7-Zip, unzip, etc.) by renaming the extension to <code>.zip</code>, or by passing it directly to a ZIP-aware tool. The <code>.dsc</code> archive contains a JSON database of your Discography collection and a folder with the collection's album artwork.</p>
+<p>A <code>.dsc</code> file is a standard ZIP archive with a renamed extension. It can be opened with any ZIP utility (macOS Archive Utility, 7-Zip, unzip, etc.) by renaming the extension to <code>.zip</code>, or by passing it directly to a ZIP-aware tool.</p>
 <h3 id="filename">Filename</h3>
 <p>Archives are named using a compact ISO timestamp:</p>
 <pre><code>Discography-&lt;yyyyMMdd-HHmmss&gt;.dsc
@@ -149,14 +153,39 @@
 <h3 id="discographyjson"><code>discography.json</code></h3>
 <p>The primary data file. UTF-8 encoded, pretty-printed JSON. See the schema below.</p>
 <h3 id="img"><code>img/</code></h3>
-<p>Contains cover art for albums that have artwork stored in the database. Each file is named after the album title with path-unsafe characters (<code>/ \ : * ? " &lt; &gt; |</code>) replaced by underscores. The image data is written as-is from the database (typically JPEG).</p>
+<p>Contains cover art for albums that have artwork stored in the database. Each file is named after the album title with path-unsafe characters (<code>/ \ : * ? " &lt; &gt; |</code>) replaced by underscores. The image data is written as-is from the database (typically JPEG); the <code>.jpg</code> extension is used regardless of source format.</p>
 <p>Albums with no stored cover art are omitted from this folder. Their <code>coverArtFile</code> field in the JSON will be <code>null</code>.</p>
+<hr />
+<h2 id="schema-version-history">Schema Version History</h2>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>What changed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>"1.0"</code></td>
+<td>Initial release</td>
+</tr>
+<tr>
+<td><code>"1.1"</code></td>
+<td>Added <code>tags</code> field (<code>array&lt;string&gt;</code>) to Album objects</td>
+</tr>
+<tr>
+<td><code>"1.2"</code></td>
+<td>Added <code>side</code> field (<code>string \| null</code>) to Track objects to support multi-sided media (Vinyl, Cassette)</td>
+</tr>
+</tbody>
+</table>
+<p>Importers should treat unknown fields as optional and fall back gracefully on older versions.</p>
 <hr />
 <h2 id="json-schema">JSON Schema</h2>
 <h3 id="top-level-document">Top-level document</h3>
 <pre><code class="language-json">{
   &quot;exportDate&quot;: &quot;2026-09-06T14:30:22Z&quot;,
-  &quot;version&quot;: &quot;1.0&quot;,
+  &quot;version&quot;: &quot;1.2&quot;,
   &quot;albumCount&quot;: 142,
   &quot;albums&quot;: [ ... ]
 }
@@ -178,7 +207,7 @@
 <tr>
 <td><code>version</code></td>
 <td><code>string</code></td>
-<td>Schema version. Currently <code>"1.1"</code></td>
+<td>Schema version. Currently <code>"1.2"</code></td>
 </tr>
 <tr>
 <td><code>albumCount</code></td>
@@ -361,6 +390,7 @@
 <pre><code class="language-json">{
   &quot;position&quot;: 1,
   &quot;discNumber&quot;: 1,
+  &quot;side&quot;: &quot;A&quot;,
   &quot;title&quot;: &quot;Come Together&quot;,
   &quot;durationMS&quot;: 259000
 }
@@ -379,13 +409,19 @@
 <td><code>position</code></td>
 <td><code>integer</code></td>
 <td>No</td>
-<td>Track number within the disc (1-based)</td>
+<td>Track number within the disc/side group (1-based). Resets to 1 at the start of each new side (for multi-sided formats) or each disc</td>
 </tr>
 <tr>
 <td><code>discNumber</code></td>
 <td><code>integer</code></td>
 <td>No</td>
-<td>Disc number for multi-disc releases (1-based)</td>
+<td>Disc number for multi-disc releases (1-based). Always <code>1</code> for single-disc releases</td>
+</tr>
+<tr>
+<td><code>side</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Physical side label for multi-sided formats (e.g. <code>"A"</code>, <code>"B"</code> for Vinyl; <code>"A"</code>, <code>"B"</code> for Cassette). <code>null</code> for formats without physical sides (CD, DVD, etc.)</td>
 </tr>
 <tr>
 <td><code>title</code></td>
@@ -401,7 +437,10 @@
 </tr>
 </tbody>
 </table>
-<p>Tracks are sorted in the JSON by <code>discNumber</code> ascending, then <code>position</code> ascending.</p>
+<p>Tracks are sorted in the JSON by <code>discNumber</code> ascending, then <code>side</code> ascending (alphabetical, <code>null</code> values first), then <code>position</code> ascending.</p>
+<h4 id="multi-sided-media-notes">Multi-sided media notes</h4>
+<p>For <strong>Vinyl</strong> and <strong>Cassette</strong> releases, <code>side</code> carries the physical side label entered by the user (typically <code>"A"</code> and <code>"B"</code>, but custom values are allowed). <code>position</code> is 1-based within each <code>(discNumber, side)</code> group — it resets to 1 at the start of each side.</p>
+<p>For all other formats (CD, DVD, Blu-Ray, 8-Track, Other), <code>side</code> is <code>null</code> and <code>position</code> is 1-based within each <code>discNumber</code>.</p>
 <hr />
 <h3 id="credit-object">Credit object</h3>
 <pre><code class="language-json">{
@@ -442,36 +481,44 @@
 <tr>
 <th>Value</th>
 <th>Description</th>
+<th>Multi-sided</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>"Vinyl"</code></td>
 <td>Vinyl record (LP, 7", 10", 12")</td>
+<td>Yes — sides labeled per disc</td>
 </tr>
 <tr>
 <td><code>"CD"</code></td>
 <td>Compact disc</td>
+<td>No</td>
 </tr>
 <tr>
 <td><code>"Cassette"</code></td>
 <td>Cassette tape</td>
+<td>Yes — sides labeled per tape</td>
 </tr>
 <tr>
 <td><code>"DVD"</code></td>
 <td>DVD video or audio</td>
+<td>No</td>
 </tr>
 <tr>
 <td><code>"Blu-Ray"</code></td>
 <td>Blu-ray disc</td>
+<td>No</td>
 </tr>
 <tr>
 <td><code>"8-Track"</code></td>
 <td>8-track cartridge</td>
+<td>No</td>
 </tr>
 <tr>
 <td><code>"Other"</code></td>
 <td>Any other physical format</td>
+<td>No</td>
 </tr>
 </tbody>
 </table>
@@ -549,6 +596,7 @@
 </table>
 <hr />
 <h2 id="complete-example">Complete Example</h2>
+<p>The following example shows a Vinyl album with two sides, demonstrating multi-disc/multi-sided track layout.</p>
 <pre><code class="language-json">{
   &quot;albumCount&quot;: 1,
   &quot;albums&quot;: [
@@ -581,13 +629,29 @@
           &quot;discNumber&quot;: 1,
           &quot;durationMS&quot;: 259000,
           &quot;position&quot;: 1,
+          &quot;side&quot;: &quot;A&quot;,
           &quot;title&quot;: &quot;Come Together&quot;
         },
         {
           &quot;discNumber&quot;: 1,
           &quot;durationMS&quot;: 187000,
           &quot;position&quot;: 2,
+          &quot;side&quot;: &quot;A&quot;,
           &quot;title&quot;: &quot;Something&quot;
+        },
+        {
+          &quot;discNumber&quot;: 1,
+          &quot;durationMS&quot;: 242000,
+          &quot;position&quot;: 1,
+          &quot;side&quot;: &quot;B&quot;,
+          &quot;title&quot;: &quot;Here Comes the Sun&quot;
+        },
+        {
+          &quot;discNumber&quot;: 1,
+          &quot;durationMS&quot;: 462000,
+          &quot;position&quot;: 2,
+          &quot;side&quot;: &quot;B&quot;,
+          &quot;title&quot;: &quot;The End&quot;
         }
       ],
       &quot;upc&quot;: null,
@@ -595,7 +659,7 @@
     }
   ],
   &quot;exportDate&quot;: &quot;2026-09-06T14:30:22Z&quot;,
-  &quot;version&quot;: &quot;1.0&quot;
+  &quot;version&quot;: &quot;1.2&quot;
 }
 </code></pre>
 <blockquote>
