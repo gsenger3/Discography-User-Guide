@@ -80,7 +80,7 @@ Tapping an album opens its detail view. The layout has two modes: **read-only** 
 - Release metadata: year, country, reissue year, label, UPC, catalog number, media condition, sleeve condition, matrix/runout notes, and free-text notes.
 - **Apple Music** pill — taps through to an Apple Music search for the album (requires internet).
 - **MusicBrainz** pill — opens the release page on musicbrainz.org in your browser (shown only when a MusicBrainz ID has been linked).
-- **Tracklist** — all tracks grouped by disc number, with position, title, and duration.
+- **Tracklist** — tracks displayed hierarchically. For multi-disc releases, a **Disc N** (or **Tape N** for Cassette) header groups each disc's tracks. For Vinyl and Cassette, tracks are further grouped under **Side A**, **Side B**, etc. within each disc. The disc header is hidden when there is only one disc. Each track shows its position number, title, and duration.
 - **Credits** — sorted by role then name.
 - **Tags** — displayed as colored pills.
 
@@ -151,7 +151,21 @@ As you type in the Title, Artist, and Label fields, autocomplete suggestions dra
 - Dragging an image file onto the artwork thumbnail `macOS`.
 - Right-clicking / long-pressing the thumbnail and choosing Remove Artwork to clear it.
 
-**Tracks** — tap **Add Track** to create a new track row. Each track has a position, disc number, title, and duration (in `m:ss` format). Tap the × on a row to remove it.
+**Tracks** — tap **Add Track** to create a new track row. Each track is displayed as a card with the following fields:
+
+| Field | Notes |
+|---|---|
+| Position | Auto-calculated — not editable directly. Resets to 1 at the start of each disc or side |
+| Title | Track name |
+| Duration | In `m:ss` format (e.g. `3:45`) |
+| Disc # | Disc (or tape) number for multi-disc releases |
+| Side | Physical side label (e.g. `A`, `B`) — only shown for **Vinyl** and **Cassette** formats |
+
+Cards are color-coded by disc number. For Vinyl and Cassette, Side A cards are shown at full intensity and each subsequent side uses a progressively paler tint to make sides visually distinct.
+
+Drag the handle (≡) on the right of a card to reorder tracks. When a track is dragged into a different disc or side group, its Disc # and Side fields update automatically to match its new neighbors.
+
+Tap **Add Track** to append a row — the new track inherits the disc number and side of the last existing track so you can keep entering tracks without adjusting those fields each time. Tap the × on a card to remove it.
 
 **Credits** — tap **Add Credit** to add a role/name pair (e.g., "Producer — Quincy Jones"). Tap × to remove.
 

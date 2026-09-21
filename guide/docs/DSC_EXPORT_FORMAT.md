@@ -1,12 +1,12 @@
 # Discography Export Format (.dsc)
 
-This document describes the `.dsc` archive format produced by the **Export Discography Collection** feature.
+This document describes the `.dsc` archive format produced by the **Export Discography to JSON** feature.
 
 ---
 
 ## Archive Overview
 
-A `.dsc` file is a standard ZIP archive with a renamed extension. It can be opened with any ZIP utility (macOS Archive Utility, 7-Zip, unzip, etc.) by renaming the extension to `.zip`, or by passing it directly to a ZIP-aware tool. The `.dsc` archive contains a JSON database of your Discography collection and a folder with the collection's album artwork.
+A `.dsc` file is a standard ZIP archive with a renamed extension. It can be opened with any ZIP utility (macOS Archive Utility, 7-Zip, unzip, etc.) by renaming the extension to `.zip`, or by passing it directly to a ZIP-aware tool.
 
 ### Filename
 
@@ -47,9 +47,21 @@ The primary data file. UTF-8 encoded, pretty-printed JSON. See the schema below.
 
 ### `img/`
 
-Contains cover art for albums that have artwork stored in the database. Each file is named after the album title with path-unsafe characters (`/ \ : * ? " < > |`) replaced by underscores. The image data is written as-is from the database (typically JPEG).
+Contains cover art for albums that have artwork stored in the database. Each file is named after the album title with path-unsafe characters (`/ \ : * ? " < > |`) replaced by underscores. The image data is written as-is from the database (typically JPEG); the `.jpg` extension is used regardless of source format.
 
 Albums with no stored cover art are omitted from this folder. Their `coverArtFile` field in the JSON will be `null`.
+
+---
+
+## Schema Version History
+
+| Version | What changed |
+|---------|-------------|
+| `"1.0"` | Initial release |
+| `"1.1"` | Added `tags` field (`array<string>`) to Album objects |
+| `"1.2"` | Added `side` field (`string \| null`) to Track objects to support multi-sided media (Vinyl, Cassette) |
+
+Importers should treat unknown fields as optional and fall back gracefully on older versions.
 
 ---
 
@@ -60,7 +72,7 @@ Albums with no stored cover art are omitted from this folder. Their `coverArtFil
 ```json
 {
   "exportDate": "2026-09-06T14:30:22Z",
-  "version": "1.0",
+  "version": "1.2",
   "albumCount": 142,
   "albums": [ ... ]
 }
@@ -69,7 +81,7 @@ Albums with no stored cover art are omitted from this folder. Their `coverArtFil
 | Field | Type | Description |
 |-------|------|-------------|
 | `exportDate` | `string` (ISO 8601) | UTC timestamp of when the export was created |
-| `version` | `string` | Schema version. Currently `"1.1"` |
+| `version` | `string` | Schema version. Currently `"1.2"` |
 | `albumCount` | `integer` | Number of album objects in `albums` |
 | `albums` | `array<Album>` | Complete list of album records |
 
@@ -135,6 +147,7 @@ Albums with no stored cover art are omitted from this folder. Their `coverArtFil
 {
   "position": 1,
   "discNumber": 1,
+  "side": "A",
   "title": "Come Together",
   "durationMS": 259000
 }
@@ -142,12 +155,19 @@ Albums with no stored cover art are omitted from this folder. Their `coverArtFil
 
 | Field | Type | Nullable | Description |
 |-------|------|----------|-------------|
-| `position` | `integer` | No | Track number within the disc (1-based) |
-| `discNumber` | `integer` | No | Disc number for multi-disc releases (1-based) |
+| `position` | `integer` | No | Track number within the disc/side group (1-based). Resets to 1 at the start of each new side (for multi-sided formats) or each disc |
+| `discNumber` | `integer` | No | Disc number for multi-disc releases (1-based). Always `1` for single-disc releases |
+| `side` | `string` | Yes | Physical side label for multi-sided formats (e.g. `"A"`, `"B"` for Vinyl; `"A"`, `"B"` for Cassette). `null` for formats without physical sides (CD, DVD, etc.) |
 | `title` | `string` | No | Track title |
 | `durationMS` | `integer` | Yes | Duration in milliseconds. `null` if unknown |
 
-Tracks are sorted in the JSON by `discNumber` ascending, then `position` ascending.
+Tracks are sorted in the JSON by `discNumber` ascending, then `side` ascending (alphabetical, `null` values first), then `position` ascending.
+
+#### Multi-sided media notes
+
+For **Vinyl** and **Cassette** releases, `side` carries the physical side label entered by the user (typically `"A"` and `"B"`, but custom values are allowed). `position` is 1-based within each `(discNumber, side)` group — it resets to 1 at the start of each side.
+
+For all other formats (CD, DVD, Blu-Ray, 8-Track, Other), `side` is `null` and `position` is 1-based within each `discNumber`.
 
 ---
 
@@ -173,15 +193,15 @@ Tracks are sorted in the JSON by `discNumber` ascending, then `position` ascendi
 
 Stored in the `format` field.
 
-| Value | Description |
-|-------|-------------|
-| `"Vinyl"` | Vinyl record (LP, 7", 10", 12") |
-| `"CD"` | Compact disc |
-| `"Cassette"` | Cassette tape |
-| `"DVD"` | DVD video or audio |
-| `"Blu-Ray"` | Blu-ray disc |
-| `"8-Track"` | 8-track cartridge |
-| `"Other"` | Any other physical format |
+| Value | Description | Multi-sided |
+|-------|-------------|-------------|
+| `"Vinyl"` | Vinyl record (LP, 7", 10", 12") | Yes — sides labeled per disc |
+| `"CD"` | Compact disc | No |
+| `"Cassette"` | Cassette tape | Yes — sides labeled per tape |
+| `"DVD"` | DVD video or audio | No |
+| `"Blu-Ray"` | Blu-ray disc | No |
+| `"8-Track"` | 8-track cartridge | No |
+| `"Other"` | Any other physical format | No |
 
 ### Release type values
 
@@ -212,6 +232,8 @@ Used by both `mediaCondition` and `sleeveCondition`.
 ---
 
 ## Complete Example
+
+The following example shows a Vinyl album with two sides, demonstrating multi-disc/multi-sided track layout.
 
 ```json
 {
@@ -246,13 +268,29 @@ Used by both `mediaCondition` and `sleeveCondition`.
           "discNumber": 1,
           "durationMS": 259000,
           "position": 1,
+          "side": "A",
           "title": "Come Together"
         },
         {
           "discNumber": 1,
           "durationMS": 187000,
           "position": 2,
+          "side": "A",
           "title": "Something"
+        },
+        {
+          "discNumber": 1,
+          "durationMS": 242000,
+          "position": 1,
+          "side": "B",
+          "title": "Here Comes the Sun"
+        },
+        {
+          "discNumber": 1,
+          "durationMS": 462000,
+          "position": 2,
+          "side": "B",
+          "title": "The End"
         }
       ],
       "upc": null,
@@ -260,7 +298,7 @@ Used by both `mediaCondition` and `sleeveCondition`.
     }
   ],
   "exportDate": "2026-09-06T14:30:22Z",
-  "version": "1.0"
+  "version": "1.2"
 }
 ```
 
