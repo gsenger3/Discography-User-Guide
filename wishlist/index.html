@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Wishlist - Discography</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <link href="../stylesheets/dsc.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Discography</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">User Guide</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../ui/" class="dropdown-item">User Interface</a>
+</li>
+                                    
+<li>
+    <a href="../collection/" class="dropdown-item">Managing Your Collection</a>
+</li>
+                                    
+<li>
+    <a href="../search/" class="dropdown-item">Searching Your Collection</a>
+</li>
+                                    
+<li>
+    <a href="../musicbrainz/" class="dropdown-item">MusicBrainz Integration</a>
+</li>
+                                    
+<li>
+    <a href="../advanced/" class="dropdown-item">Advanced Features</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#wishlist" class="nav-link">Wishlist</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#accessing-the-wishlist" class="nav-link">Accessing the Wishlist</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#wishlist-list" class="nav-link">Wishlist List</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#wishlist-item-detail" class="nav-link">Wishlist Item Detail</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#adding-items-to-the-wishlist" class="nav-link">Adding Items to the Wishlist</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#moving-a-wishlist-item-to-your-collection" class="nav-link">Moving a Wishlist Item to Your Collection</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#wishlist-on-the-home-screen" class="nav-link">Wishlist on the Home Screen</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="wishlist">Wishlist</h1>
+<p>The Wishlist lets you track releases you want to acquire. Items live separately from your collection and can be moved into it with a single tap when you get the album.</p>
+<hr />
+<h2 id="accessing-the-wishlist">Accessing the Wishlist</h2>
+<p>Tap the <strong>heart icon</strong> in the toolbar to enter Wishlist mode. The sidebar switches from your collection to the Wishlist list and the heart icon becomes highlighted in pink. Tap it again, or tap the <strong>Discography logo</strong>, to return to your collection.</p>
+<hr />
+<h2 id="wishlist-list">Wishlist List</h2>
+<p>The Wishlist sidebar works similarly to the Collection list.</p>
+<h3 id="filtering-and-sorting">Filtering and Sorting</h3>
+<p>A control strip above the list lets you:</p>
+<ul>
+<li><strong>Filter by format</strong> — show only a specific media format or show all.</li>
+<li><strong>Sort</strong> — by Artist, Album title, or Year.</li>
+<li><strong>Sort direction</strong> — toggle ascending/descending order.</li>
+</ul>
+<p>A total count banner shows how many items match the current filter and search.</p>
+<h3 id="list-actions">List Actions</h3>
+<ul>
+<li><strong>Tap / click</strong> an item to open its detail view.</li>
+<li><strong>Swipe left</strong> <code>iOS</code> on a row to reveal a Delete button.</li>
+<li><strong>Right-click / long-press</strong> a row for a context menu with:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Add to Collection</td>
+<td>Moves the item into your collection and removes it from the Wishlist</td>
+</tr>
+<tr>
+<td>Duplicate</td>
+<td>Creates a copy of the item in the Wishlist</td>
+</tr>
+<tr>
+<td>Delete</td>
+<td>Removes the item from the Wishlist</td>
+</tr>
+</tbody>
+</table>
+<h3 id="toolbar-buttons">Toolbar Buttons</h3>
+<table>
+<thead>
+<tr>
+<th>Button</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Discography logo</td>
+<td>Return to the collection Home screen</td>
+</tr>
+<tr>
+<td>MusicBrainz icon</td>
+<td>Switch to MusicBrainz search mode</td>
+</tr>
+<tr>
+<td>Heart (highlighted)</td>
+<td>Exit Wishlist mode</td>
+</tr>
+<tr>
+<td>Trash</td>
+<td>Delete the currently selected item</td>
+</tr>
+<tr>
+<td>+</td>
+<td>Add a new blank Wishlist item</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="wishlist-item-detail">Wishlist Item Detail</h2>
+<h3 id="read-only-view">Read-Only View</h3>
+<p>Tapping a Wishlist item opens its detail view. The layout mirrors the Album Detail view:</p>
+<ul>
+<li>A hero banner with blurred cover art, gradient, and a thumbnail on the right.</li>
+<li>Title and artist overlaid on the banner.</li>
+<li><strong>Format / Release Type</strong> displayed below the banner.</li>
+<li>A pink <strong>Wishlist</strong> badge.</li>
+<li>Release metadata: year, country, label, UPC, and catalog number.</li>
+<li><strong>Added date</strong> — shown centered below the divider, indicating when the item was added to your Wishlist.</li>
+<li><strong>Notes</strong> — free-text notes (if set).</li>
+</ul>
+<h3 id="toolbar-buttons-read-only-mode">Toolbar Buttons (read-only mode)</h3>
+<table>
+<thead>
+<tr>
+<th>Button</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pencil / Edit</td>
+<td>Switches to edit mode</td>
+</tr>
+<tr>
+<td>Add to Collection</td>
+<td>Moves the item into your collection and removes it from the Wishlist</td>
+</tr>
+</tbody>
+</table>
+<p>After tapping <strong>Add to Collection</strong>, the button changes to <strong>Added to Collection</strong> (green checkmark) and becomes disabled.</p>
+<h3 id="edit-mode">Edit Mode</h3>
+<p>Tap <strong>Edit</strong> (pencil icon) to enter edit mode. Tap <strong>Save</strong> (checkmark) to commit, or <strong>Cancel</strong> (×) to discard.</p>
+<h4 id="fields-available-in-edit-mode">Fields available in edit mode</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Album Title</strong></td>
+<td><em>Required</em></td>
+</tr>
+<tr>
+<td><strong>Artist</strong></td>
+<td><em>Required</em></td>
+</tr>
+<tr>
+<td>Year</td>
+<td>Original release year</td>
+</tr>
+<tr>
+<td>Country</td>
+<td>Two-letter country code or full name</td>
+</tr>
+<tr>
+<td>Format</td>
+<td>Vinyl, CD, Cassette, DVD, Blu-Ray, 8-Track, Other</td>
+</tr>
+<tr>
+<td>Release Type</td>
+<td>Album, EP, Single, Compilation</td>
+</tr>
+<tr>
+<td>Label</td>
+<td>Record label</td>
+</tr>
+<tr>
+<td>UPC / Barcode</td>
+<td>Numeric barcode</td>
+</tr>
+<tr>
+<td>Catalog Number</td>
+<td>Label catalog number</td>
+</tr>
+<tr>
+<td>MusicBrainz ID</td>
+<td>UUID for the release on musicbrainz.org</td>
+</tr>
+<tr>
+<td>Cover Art URL</td>
+<td>Direct URL to cover art image</td>
+</tr>
+<tr>
+<td>Notes</td>
+<td>Free-text personal notes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cover art</strong> can be set by:</p>
+<ul>
+<li>Clicking the camera button on the artwork thumbnail to pick an image from your Photos library <code>iOS</code> or file system <code>macOS</code>.</li>
+<li>Dragging an image file onto the artwork thumbnail <code>macOS</code>.</li>
+<li>Right-clicking / long-pressing the thumbnail and choosing <strong>Remove Artwork</strong> to clear it.</li>
+</ul>
+<blockquote>
+<p>Note: Wishlist items do not support tracklists, credits, or tags. These fields are available when the item is moved into your collection.</p>
+</blockquote>
+<hr />
+<h2 id="adding-items-to-the-wishlist">Adding Items to the Wishlist</h2>
+<p>There are two ways to add an item to your Wishlist:</p>
+<ol>
+<li>
+<p><strong>Manually</strong> — while in Wishlist mode, tap the <strong>+</strong> button in the toolbar. A blank edit form opens. Fill in at least the Title and Artist, then tap Save.</p>
+</li>
+<li>
+<p><strong>From MusicBrainz</strong> — search MusicBrainz, open a release detail view, then tap the <strong>heart (Add to Wishlist)</strong> button in the toolbar. The item is added with full metadata and cover art. See <a href="../musicbrainz/#adding-to-your-wishlist-from-musicbrainz">MusicBrainz Integration</a>.</p>
+</li>
+</ol>
+<p>You can also right-click / long-press any MusicBrainz search result row and choose <strong>Add to Wishlist</strong> without opening the detail view.</p>
+<hr />
+<h2 id="moving-a-wishlist-item-to-your-collection">Moving a Wishlist Item to Your Collection</h2>
+<p>When you acquire an album on your Wishlist, move it to your collection in one of two ways:</p>
+<ul>
+<li>Open the item's detail view and tap <strong>Add to Collection</strong> in the toolbar.</li>
+<li>Right-click / long-press the item's row in the Wishlist list and choose <strong>Add to Collection</strong>.</li>
+</ul>
+<p>The item is copied into your collection with all its metadata and cover art, then removed from the Wishlist. You can continue editing the resulting album entry to add tracks, credits, and tags.</p>
+<hr />
+<h2 id="wishlist-on-the-home-screen">Wishlist on the Home Screen</h2>
+<p>If your Wishlist contains any items, a <strong>Wishlist</strong> coverflow section appears on the Home screen between the Recently Added and Spotlight sections. Tap any card to open that item's detail view. The number of items shown is configurable in Settings under <strong>Wishlist Settings</strong>.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+                <p>Copyright &copy; 2026 Primo Studios / George Senger.<br/>All rights reserved.</p>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

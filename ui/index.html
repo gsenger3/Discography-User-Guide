@@ -117,6 +117,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-bs-level="2"><a href="#wishlist" class="nav-link">Wishlist</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -125,7 +129,7 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="user-interface">User Interface</h1>
-<p>This page covers the main screens and layout of Discography: the <strong>Home Screen</strong>, the <strong>Collection List</strong>, and the <strong>Album Detail View</strong>.</p>
+<p>This page covers the main screens and layout of Discography: the <strong>Home Screen</strong>, the <strong>Collection List</strong>, the <strong>Album Detail View</strong>, and the <strong>Wishlist</strong>.</p>
 <hr />
 <h2 id="getting-around">Getting Around</h2>
 <p>Discography uses a two-panel split layout. On Mac and iPad the sidebar shows your collection list on the left and the detail panel on the right. On iPhone the app starts on the detail panel (the Home screen); swipe or tap the list icon to get to the sidebar.</p>
@@ -142,12 +146,16 @@
 <td>Returns to the Home screen</td>
 </tr>
 <tr>
+<td>Heart icon (toolbar)</td>
+<td>Toggles Wishlist mode on/off</td>
+</tr>
+<tr>
 <td>MusicBrainz icon (toolbar)</td>
 <td>Toggles MusicBrainz search mode on/off</td>
 </tr>
 <tr>
 <td>+ button (toolbar)</td>
-<td>Creates a new blank album entry</td>
+<td>Creates a new blank album entry (or Wishlist item in Wishlist mode)</td>
 </tr>
 <tr>
 <td>Barcode icon (toolbar) <code>iOS</code></td>
@@ -160,6 +168,7 @@
 <p>The Home screen is the default detail view when nothing is selected in the list.</p>
 <p><strong>Statistics card</strong> — shows your total album count and a breakdown by the two most common formats in your collection, with any remaining formats grouped under "All Other Formats."</p>
 <p><strong>Recently Added</strong> — a horizontal coverflow scroll of the albums you added most recently. Tap any card to open that album's detail view. The number of albums shown is configurable in Settings.</p>
+<p><strong>Wishlist</strong> — a horizontal coverflow scroll of your most recently added Wishlist items. Tap any card to open that item's detail view. Only shown when your Wishlist contains at least one item. The number of items shown is configurable in Settings.</p>
 <p><strong>Album Spotlight</strong> — one album picked daily from your collection. The pick rotates each calendar day.</p>
 <p><strong>Quick Actions</strong> <code>iOS</code> — shortcut buttons for <code>Add New Album</code> and <code>Scan Barcode</code>.</p>
 <p><strong>Search bar</strong> <code>iPhone</code> — a floating search bar at the bottom of the Home screen lets you type a search and jump directly to the filtered collection list.</p>
@@ -397,7 +406,10 @@ On <code>iOS</code>, long-press the cover art thumbnail to Save to Photos or sha
 <p>Drag the handle (≡) on the right of a card to reorder tracks. When a track is dragged into a different disc or side group, its Disc # and Side fields update automatically to match its new neighbors.</p>
 <p>Tap <strong>Add Track</strong> to append a row — the new track inherits the disc number and side of the last existing track so you can keep entering tracks without adjusting those fields each time. Tap the × on a card to remove it.</p>
 <p><strong>Credits</strong> — tap <strong>Add Credit</strong> to add a role/name pair (e.g., "Producer — Quincy Jones"). Tap × to remove.</p>
-<p><strong>Tags</strong> — type a tag name and press Return to add it, or tap the × on a pill to remove it. See <a href="../advanced/#managing-tags">Managing Tags</a> for renaming and deleting tags across your whole collection.</p></div>
+<p><strong>Tags</strong> — type a tag name and press Return to add it, or tap the × on a pill to remove it. See <a href="../advanced/#managing-tags">Managing Tags</a> for renaming and deleting tags across your whole collection.</p>
+<hr />
+<h2 id="wishlist">Wishlist</h2>
+<p>For full details on the Wishlist feature — including adding items, editing, and moving to your collection — see the <a href="../wishlist/">Wishlist</a> page.</p></div>
             </div>
         </div>
 
