@@ -1,6 +1,6 @@
 # MusicBrainz Integration
 
-MusicBrainz is a free, open-source music encyclopedia. Discography can search it to discover releases, view rich metadata, and import albums directly into your collection.
+MusicBrainz is a free, open-source music encyclopedia. Discography can search it to discover releases, view rich metadata, and import albums directly into your collection or Wishlist.
 
 ---
 
@@ -26,6 +26,15 @@ Results are paginated. Scroll to the bottom of the list to automatically load th
 The format filter and sort controls at the top of the sidebar apply to MusicBrainz results the same way they do to your local collection.
 
 > Note: Sometimes MusicBrainz fails to or returns incomplete results. The recommended course of action is to refresh the search. Select the `Refresh` button on `macOS` or pull down to refresh on `iOS`. 
+
+### Result Row Actions
+
+**Right-click / long-press** any result row for a context menu with:
+
+| Action | Description |
+|---|---|
+| Add to Collection | Imports the release into your collection immediately, without opening the detail view |
+| Add to Wishlist | Adds the release to your Wishlist immediately, without opening the detail view |
 
 ### Exiting MusicBrainz Mode
 
@@ -87,6 +96,18 @@ You can also enrich an album already in your collection: open its detail view, t
 
 ---
 
+## Adding to Your Wishlist from MusicBrainz
+
+From a MusicBrainz release detail view, tap the **heart (Add to Wishlist)** button in the toolbar to save the release to your Wishlist without adding it to your collection. The item is saved with full metadata and cover art.
+
+After tapping, the button changes to **Added to Wishlist** (filled heart) and becomes disabled.
+
+You can also right-click / long-press any result row in the MusicBrainz list and choose **Add to Wishlist** to add it directly without opening the detail view.
+
+For details on managing your Wishlist, see the [Wishlist](wishlist.md) page.
+
+---
+
 ## Barcode Scanner
 
 On iOS, tap the **barcode icon** in the toolbar (or Scan Barcode on the Home screen). The camera opens and scans for a UPC or EAN barcode printed on the album packaging.
@@ -98,4 +119,4 @@ When a barcode is recognized:
 3. A search for `barcode:<scanned-value>` is submitted.
 4. Matching releases appear in the list.
 
-From there, tap a result and tap **Add to Collection** to import it.
+From there, tap a result and tap **Add to Collection** to import it, or **Add to Wishlist** to save it for later.

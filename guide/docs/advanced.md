@@ -10,7 +10,8 @@ Open Settings from the gear icon in the toolbar (iOS) or from the application me
 
 | Setting | Description |
 |---|---|
-| Recently Added — Number of Albums to Display | Controls how many albums appear in the Home screen coverflow (1–99) |
+| Recently Added — Number of Albums to Display | Controls how many albums appear in the Home screen Recently Added coverflow (1–99) |
+| Wishlist — Number of Albums to Display | Controls how many items appear in the Home screen Wishlist coverflow (1–99) |
 | Tag Manager | Rename or delete tags across the entire collection |
 | Version Info | Shows the current app version and build number |
 

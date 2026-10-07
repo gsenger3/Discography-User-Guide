@@ -1,6 +1,6 @@
 # User Interface
 
-This page covers the main screens and layout of Discography: the **Home Screen**, the **Collection List**, and the **Album Detail View**.
+This page covers the main screens and layout of Discography: the **Home Screen**, the **Collection List**, the **Album Detail View**, and the **Wishlist**.
 
 ---
 
@@ -11,8 +11,9 @@ Discography uses a two-panel split layout. On Mac and iPad the sidebar shows you
 | Control | What it does |
 | --- | --- |
 | Discography logo (toolbar) | Returns to the Home screen |
+| Heart icon (toolbar) | Toggles Wishlist mode on/off |
 | MusicBrainz icon (toolbar) | Toggles MusicBrainz search mode on/off |
-| + button (toolbar) | Creates a new blank album entry |
+| + button (toolbar) | Creates a new blank album entry (or Wishlist item in Wishlist mode) |
 | Barcode icon (toolbar) `iOS` | Opens the barcode scanner |
 
 ---
@@ -24,6 +25,8 @@ The Home screen is the default detail view when nothing is selected in the list.
 **Statistics card** — shows your total album count and a breakdown by the two most common formats in your collection, with any remaining formats grouped under "All Other Formats."
 
 **Recently Added** — a horizontal coverflow scroll of the albums you added most recently. Tap any card to open that album's detail view. The number of albums shown is configurable in Settings.
+
+**Wishlist** — a horizontal coverflow scroll of your most recently added Wishlist items. Tap any card to open that item's detail view. Only shown when your Wishlist contains at least one item. The number of items shown is configurable in Settings.
 
 **Album Spotlight** — one album picked daily from your collection. The pick rotates each calendar day.
 
@@ -170,3 +173,9 @@ Tap **Add Track** to append a row — the new track inherits the disc number and
 **Credits** — tap **Add Credit** to add a role/name pair (e.g., "Producer — Quincy Jones"). Tap × to remove.
 
 **Tags** — type a tag name and press Return to add it, or tap the × on a pill to remove it. See [Managing Tags](advanced.md#managing-tags) for renaming and deleting tags across your whole collection.
+
+---
+
+## Wishlist
+
+For full details on the Wishlist feature — including adding items, editing, and moving to your collection — see the [Wishlist](wishlist.md) page.
