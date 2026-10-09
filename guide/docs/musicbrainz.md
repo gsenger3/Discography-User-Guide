@@ -92,8 +92,6 @@ The album is added to your collection with:
 
 After import the button changes to **Added to Collection** (green checkmark) and becomes disabled.
 
-You can also enrich an album already in your collection: open its detail view, tap the **MusicBrainz toolbar button**, and the app will look up the album's MusicBrainz ID (if stored) and fill in any fields that are currently empty — tracks, credits, cover art URL.
-
 ---
 
 ## Adding to Your Wishlist from MusicBrainz
@@ -105,6 +103,75 @@ After tapping, the button changes to **Added to Wishlist** (filled heart) and be
 You can also right-click / long-press any result row in the MusicBrainz list and choose **Add to Wishlist** to add it directly without opening the detail view.
 
 For details on managing your Wishlist, see the [Wishlist](wishlist.md) page.
+
+---
+
+## Metadata Enrichment
+
+Discography can enrich albums already in your collection with metadata from MusicBrainz — tracklists, credits, cover art, label, catalog number, country, and more. Enrichment runs in the background one album at a time, respecting MusicBrainz API rate limits.
+
+### The MusicBrainz Toolbar Button (Album Detail)
+
+When viewing an album in your collection, the **MusicBrainz icon** appears in the toolbar. Tapping it opens a menu with two enrichment actions:
+
+| Option | What it does |
+|---|---|
+| **Match Album** | Searches MusicBrainz and fills in any empty fields. Existing data is not overwritten. |
+| **Fix Match** | Opens a list of all matching releases so you can pick the exact pressing. Replaces all metadata with your selection. |
+
+When enrichment is actively running, the toolbar icon changes to a **spinner**. Tapping the spinner opens a progress dialog showing which album is currently being processed, with a **Cancel Enrichment** option to stop the queue.
+
+### Match Album
+
+**Match Album** uses the most specific identifier available to find the right release:
+
+1. **Barcode (UPC)** — most precise; used if present
+2. **Catalog number + artist** — used if a catalog number is stored  
+3. **Artist, title, year, country** — broad text match as a fallback
+
+Only **empty** fields are updated. Any data already on the album is left unchanged, making Match Album safe to run on partially-filled entries.
+
+When the match completes, a timestamped status note is appended to the album's **Notes** field listing which fields were updated.
+
+> Note: MusicBrainz can be quite strict when performing barcode and catalog matches, if your album is not found, verify these fields are correct. Alternatively, use the fix match feature to perform a looser search and choose from a wider range of releases.
+
+### Fix Match
+
+Use **Fix Match** when the automatic match selected the wrong pressing, region, or edition of a release.
+
+Fix Match opens a sheet showing all MusicBrainz releases for the album's artist and title. Each row shows cover art, title, artist, label, catalog number, country, year, and format. Tap any row to apply it.
+
+**Fix Match replaces all metadata**, including:
+
+- Artist, title, year, country
+- Format and release type
+- Label and catalog number
+- Barcode
+- Cover art
+- Full tracklist
+- Credits
+
+A timestamped note is appended to the **Notes** field recording the manual match and which fields changed.
+
+### Auto-Enrich on First Save
+
+When you add a new album and save it for the first time, Discography automatically queues it for MusicBrainz enrichment. No manual action is required — metadata fills in shortly after saving.
+
+### Discogs Import Auto-Enrichment
+
+After importing a collection from a Discogs CSV export, all imported albums are automatically queued for MusicBrainz enrichment. See [Discogs Import](DISCOGS_IMPORT_FORMAT.md) for details on the import process.
+
+### Enrichment Notes Log
+
+Every enrichment action appends a status entry to the album's **Notes** field. Examples:
+
+```
+MusicBrainz: Matched on 10/9/26. Updated: Year, Country, Cover Art, Tracklist (12 tracks).
+MusicBrainz: Manual match on 10/9/26. Updated: Artist, Title, Format, Label, Tracklist (10 tracks).
+MusicBrainz: No match found (10/9/26).
+```
+
+This provides an audit trail of when an album was enriched and what changed.
 
 ---
 
