@@ -121,6 +121,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-bs-level="2"><a href="#metadata-enrichment" class="nav-link">Metadata Enrichment</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-bs-level="2"><a href="#barcode-scanner" class="nav-link">Barcode Scanner</a>
               <ul class="nav flex-column">
               </ul>
@@ -249,13 +253,73 @@ a=Bowie r=Heroes
 - Credits (producers, engineers, etc.)
 - Cover art downloaded and stored locally for offline access</p>
 <p>After import the button changes to <strong>Added to Collection</strong> (green checkmark) and becomes disabled.</p>
-<p>You can also enrich an album already in your collection: open its detail view, tap the <strong>MusicBrainz toolbar button</strong>, and the app will look up the album's MusicBrainz ID (if stored) and fill in any fields that are currently empty — tracks, credits, cover art URL.</p>
 <hr />
 <h2 id="adding-to-your-wishlist-from-musicbrainz">Adding to Your Wishlist from MusicBrainz</h2>
 <p>From a MusicBrainz release detail view, tap the <strong>heart (Add to Wishlist)</strong> button in the toolbar to save the release to your Wishlist without adding it to your collection. The item is saved with full metadata and cover art.</p>
 <p>After tapping, the button changes to <strong>Added to Wishlist</strong> (filled heart) and becomes disabled.</p>
 <p>You can also right-click / long-press any result row in the MusicBrainz list and choose <strong>Add to Wishlist</strong> to add it directly without opening the detail view.</p>
 <p>For details on managing your Wishlist, see the <a href="../wishlist/">Wishlist</a> page.</p>
+<hr />
+<h2 id="metadata-enrichment">Metadata Enrichment</h2>
+<p>Discography can enrich albums already in your collection with metadata from MusicBrainz — tracklists, credits, cover art, label, catalog number, country, and more. Enrichment runs in the background one album at a time, respecting MusicBrainz API rate limits.</p>
+<h3 id="the-musicbrainz-toolbar-button-album-detail">The MusicBrainz Toolbar Button (Album Detail)</h3>
+<p>When viewing an album in your collection, the <strong>MusicBrainz icon</strong> appears in the toolbar. Tapping it opens a menu with two enrichment actions:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Match Album</strong></td>
+<td>Searches MusicBrainz and fills in any empty fields. Existing data is not overwritten.</td>
+</tr>
+<tr>
+<td><strong>Fix Match</strong></td>
+<td>Opens a list of all matching releases so you can pick the exact pressing. Replaces all metadata with your selection.</td>
+</tr>
+</tbody>
+</table>
+<p>When enrichment is actively running, the toolbar icon changes to a <strong>spinner</strong>. Tapping the spinner opens a progress dialog showing which album is currently being processed, with a <strong>Cancel Enrichment</strong> option to stop the queue.</p>
+<h3 id="match-album">Match Album</h3>
+<p><strong>Match Album</strong> uses the most specific identifier available to find the right release:</p>
+<ol>
+<li><strong>Barcode (UPC)</strong> — most precise; used if present</li>
+<li><strong>Catalog number + artist</strong> — used if a catalog number is stored  </li>
+<li><strong>Artist, title, year, country</strong> — broad text match as a fallback</li>
+</ol>
+<p>Only <strong>empty</strong> fields are updated. Any data already on the album is left unchanged, making Match Album safe to run on partially-filled entries.</p>
+<p>When the match completes, a timestamped status note is appended to the album's <strong>Notes</strong> field listing which fields were updated.</p>
+<blockquote>
+<p>Note: MusicBrainz can be quite strict when performing barcode and catalog matches, if your album is not found, verify these fields are correct. Alternatively, use the fix match feature to perform a looser search and choose from a wider range of releases.</p>
+</blockquote>
+<h3 id="fix-match">Fix Match</h3>
+<p>Use <strong>Fix Match</strong> when the automatic match selected the wrong pressing, region, or edition of a release.</p>
+<p>Fix Match opens a sheet showing all MusicBrainz releases for the album's artist and title. Each row shows cover art, title, artist, label, catalog number, country, year, and format. Tap any row to apply it.</p>
+<p><strong>Fix Match replaces all metadata</strong>, including:</p>
+<ul>
+<li>Artist, title, year, country</li>
+<li>Format and release type</li>
+<li>Label and catalog number</li>
+<li>Barcode</li>
+<li>Cover art</li>
+<li>Full tracklist</li>
+<li>Credits</li>
+</ul>
+<p>A timestamped note is appended to the <strong>Notes</strong> field recording the manual match and which fields changed.</p>
+<h3 id="auto-enrich-on-first-save">Auto-Enrich on First Save</h3>
+<p>When you add a new album and save it for the first time, Discography automatically queues it for MusicBrainz enrichment. No manual action is required — metadata fills in shortly after saving.</p>
+<h3 id="discogs-import-auto-enrichment">Discogs Import Auto-Enrichment</h3>
+<p>After importing a collection from a Discogs CSV export, all imported albums are automatically queued for MusicBrainz enrichment. See <a href="../DISCOGS_IMPORT_FORMAT/">Discogs Import</a> for details on the import process.</p>
+<h3 id="enrichment-notes-log">Enrichment Notes Log</h3>
+<p>Every enrichment action appends a status entry to the album's <strong>Notes</strong> field. Examples:</p>
+<pre><code>MusicBrainz: Matched on 10/9/26. Updated: Year, Country, Cover Art, Tracklist (12 tracks).
+MusicBrainz: Manual match on 10/9/26. Updated: Artist, Title, Format, Label, Tracklist (10 tracks).
+MusicBrainz: No match found (10/9/26).
+</code></pre>
+<p>This provides an audit trail of when an album was enriched and what changed.</p>
 <hr />
 <h2 id="barcode-scanner">Barcode Scanner</h2>
 <p>On iOS, tap the <strong>barcode icon</strong> in the toolbar (or Scan Barcode on the Home screen). The camera opens and scans for a UPC or EAN barcode printed on the album packaging.</p>
