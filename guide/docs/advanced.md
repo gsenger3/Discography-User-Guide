@@ -70,3 +70,16 @@ The import will begin. Discography `.dsc` imports will show a progress log and h
 
 For details on the `.dsc` file format, see [DSC EXPORT FORMAT](DSC_EXPORT_FORMAT.md).
 For the Discogs `.csv` format, see [DISCOGS IMPORT FORMAT](DISCOGS_IMPORT_FORMAT.md).
+
+### Wishlist CSV Export / Import (macOS)
+
+Your Wishlist can also be exported as a standalone CSV file and re-imported independently of your main collection.
+
+| Menu item | Description |
+|-----------|-------------|
+| **File > Export Wishlist CSV…** | Exports all wishlist items to a timestamped `.csv` file |
+| **File > Import Wishlist CSV…** | Imports wishlist items from a `.csv` file, with replace or append mode |
+
+> **Note:** The Wishlist CSV does not include cover art. Use MusicBrainz **Match Album** after importing to re-fetch artwork.
+
+For details on the Wishlist CSV file format, see [WISHLIST CSV FORMAT](WISHLIST_CSV_FORMAT.md).

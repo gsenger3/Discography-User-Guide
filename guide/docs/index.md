@@ -21,9 +21,10 @@ Discography is a personal music collection manager for iOS and macOS. It lets yo
 - Implements basic and advanced [MusicBrainz](https://musicbrainz.org) searching.
 - Automatically enriches new albums with MusicBrainz metadata on first save.
 - **Match Album** fills empty fields from MusicBrainz; **Fix Match** lets you select the exact pressing from a full release list.
-- Includes a **Wishlist** to track releases you want to acquire, with one-tap move-to-collection.
+- Includes a **Wishlist** to track releases you want to acquire, with one-tap move-to-collection and MusicBrainz match/fix-match support.
 - `macOS` Supports the ability to import collections from [Discogs](https://www.discogs.com).
 - `macOS` Supports the ability to import/export Discography collections.
+- `macOS` Supports the ability to import/export the Wishlist as a CSV file.
 
 ## Download
 

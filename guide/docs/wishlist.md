@@ -66,10 +66,24 @@ Tapping a Wishlist item opens its detail view. The layout mirrors the Album Deta
 
 | Button | Action |
 |---|---|
+| MusicBrainz icon | Opens MusicBrainz metadata options (Match Album / Fix Match) |
 | Pencil / Edit | Switches to edit mode |
 | Add to Collection | Moves the item into your collection and removes it from the Wishlist |
 
 After tapping **Add to Collection**, the button changes to **Added to Collection** (green checkmark) and becomes disabled.
+
+### MusicBrainz Match
+
+Tap the **MusicBrainz icon** in the toolbar while viewing a wishlist item to enrich its metadata from MusicBrainz. Two options are available:
+
+| Option | Description |
+|--------|-------------|
+| **Match Album** | Automatically searches MusicBrainz using the item's existing title, artist, year, country, UPC, or catalog number and applies the best match. Only empty fields are filled; existing values are not overwritten. |
+| **Fix Match** | Opens a full release list so you can manually choose the correct pressing. Applying a release from this view overwrites all fields with the selected release's data. |
+
+After a successful match, a note is appended to the item's **Notes** field recording what was updated and when.
+
+> **Note:** MusicBrainz match for wishlist items updates all applicable fields (title, artist, year, country, format, release type, label, catalog number, barcode, MusicBrainz ID, and cover art). Tracklists and credits are not applicable to wishlist items and are available after moving the item into your collection.
 
 ### Edit Mode
 
@@ -128,3 +142,32 @@ The item is copied into your collection with all its metadata and cover art, the
 ## Wishlist on the Home Screen
 
 If your Wishlist contains any items, a **Wishlist** coverflow section appears on the Home screen between the Recently Added and Spotlight sections. Tap any card to open that item's detail view. The number of items shown is configurable in Settings under **Wishlist Settings**.
+
+---
+
+## Import and Export (`macOS`)
+
+The Wishlist can be exported to a CSV file and imported from one. This lets you back up your wishlist, transfer it between machines, or edit it in a spreadsheet application.
+
+### Exporting
+
+1. Go to **File > Export Wishlist CSV…**
+2. Click **Choose…** to select the destination folder (defaults to `~/Documents/Discography/`).
+3. Click **Export**.
+
+A progress log updates in real time. The resulting file is named `Wishlist-<timestamp>.csv` and saved to the chosen folder. When the export finishes, you can click **Show in Finder** to reveal it immediately.
+
+### Importing
+
+1. Go to **File > Import Wishlist CSV…**
+2. Click **Choose** to select a Wishlist CSV file (`.csv`).
+3. Select an import mode:
+    - **Replace Wishlist** — deletes all existing wishlist items and replaces them with the imported data.
+    - **Append to Wishlist** — adds the imported items alongside your existing wishlist items.
+4. Click **Import**.
+
+A progress log updates in real time. You can cancel an in-progress import at any time.
+
+> **Note:** Cover art is not stored in CSV files. After importing, use the MusicBrainz **Match Album** button on each item to re-fetch artwork, or add it manually in edit mode.
+
+For full details on the CSV file format, see [Wishlist CSV Format](WISHLIST_CSV_FORMAT.md).
