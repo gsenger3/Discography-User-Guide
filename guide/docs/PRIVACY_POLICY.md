@@ -53,6 +53,3 @@ Discography may ask for the following permissions. Each is optional and used onl
 ## Changes to This Policy
 
 If this policy changes, the updated version will be posted here with a new effective date.
-
----
-Copyright &copy; 2026 Primo Studios / George Senger. All rights reserved.
